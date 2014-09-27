@@ -1,0 +1,20 @@
+﻿@model BloodBank.Models.Donor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div>
+
+    name: @Model.Name<br />
+    blood type: @Model.BloodType<br />
+    address: @Model.Address<br />
+    contact #: @Model.ContactNumber<br />
+    medical report: @Model.MedicalReport
+
+</div>
+
+<a href="@Url.Action("Index", "Donor")">
+    Back to Donors
+</a>

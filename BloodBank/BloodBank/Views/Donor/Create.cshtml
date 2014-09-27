@@ -1,0 +1,34 @@
+﻿@model BloodBank.Models.Donor
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action="@Url.Action("Create", "Donor")" method="post">
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name)
+    @Html.ValidationMessageFor(x => x.Name)
+    <br/>
+    @Html.LabelFor(x => x.BloodType)
+    @Html.TextBoxFor(x => x.BloodType)
+    @Html.ValidationMessageFor(x => x.BloodType)
+    <br />
+    @Html.LabelFor(x => x.Address)
+    @Html.TextBoxFor(x => x.Address)
+    @Html.ValidationMessageFor(x => x.Address)
+    <br />
+    @Html.LabelFor(x => x.ContactNumber)
+    @Html.TextBoxFor(x => x.ContactNumber)
+    @Html.ValidationMessageFor(x => x.ContactNumber)
+    <br />
+    @Html.LabelFor(x => x.MedicalReport)
+    @Html.TextBoxFor(x => x.MedicalReport)
+    @Html.ValidationMessageFor(x => x.MedicalReport)
+
+    <input type="submit" value="Create Donor" />
+
+</form>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
