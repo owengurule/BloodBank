@@ -47,7 +47,26 @@ namespace BloodBank.Controllers
         {
             db.Entry(Donor).State = System.Data.EntityState.Modified;
 
+            db.SaveChanges();
+
             return RedirectToAction("Edit", "Donor");
         }
+
+        public ActionResult Delete(int id)
+        {
+            return View(db.BloodBanks.Find(id));
+        }
+
+        public ActionResult DeleteConfirm(int id)
+        {
+            Models.Donor formToDelete = db.Donors.Find(id);
+
+            db.Donors.Remove(formToDelete);
+
+            db.SaveChanges();
+
+            return RedirectToAction ("Details", "Donor");
+        }
+
     }
 }
